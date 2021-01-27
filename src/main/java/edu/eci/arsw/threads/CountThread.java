@@ -21,7 +21,7 @@ public class CountThread extends Thread {
 		this.A = A;
 		this.B = B;
 	}
-	//Realizamos la ejecución, mostrando en pantalla el valor de A si es menor o igual a B; incrementamos el valor de A.
+	//Realizamos la ejecución, mostrando en pantalla el valor de A mientras sea menor o igual a B; incrementamos el valor de A.
     public void run() {
     	while(A<=B) {
     		System.out.println(A);
