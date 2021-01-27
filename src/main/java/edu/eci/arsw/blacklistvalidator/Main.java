@@ -13,11 +13,11 @@ import java.util.List;
  */
 public class Main {
     
-    public static void main(String a[]){
+    public static void main(String a[]) throws InterruptedException{
+    	long iniciarEjecucion = System.currentTimeMillis();
         HostBlackListsValidator hblv=new HostBlackListsValidator();
-        List<Integer> blackListOcurrences=hblv.checkHost("200.24.34.55");
+        List<Integer> blackListOcurrences=hblv.checkHost("202.24.34.55",50); //añadimos el valor para N (cantidad de Threads)
         System.out.println("The host was found in the following blacklists:"+blackListOcurrences);
-        
-    }
-    
-}
+        long finalizarEjecucion = System.currentTimeMillis();
+        System.out.println(finalizarEjecucion-iniciarEjecucion);}}
+//Para controlar el tiempo de ejecucion hacemos uso de long

@@ -19,18 +19,21 @@ public class HostBLThread extends Thread {
 	private String IP;
 	
 	
-	public HostBLThread(int i,int f,String IP) { 
-		this.inicio=i;
-		this.fin=f;
+	public HostBLThread(String IP, int in,int fi, HostBlacklistsDataSourceFacade skds) { 
+		this.inicio=in;
+		this.fin=fi;
+		this.IP= IP;
 		this.numListasVisitadas = 0;
-		this.numOcurrencias = 0;}
+		this.numOcurrencias = 0;
+		this.skds = skds;
+		listaOcurrencias = new LinkedList<Integer>();}
 	
 	public void run() {
-	        for (int i=inicio;i<fin && BLACK_LIST_ALARM_COUNT>numOcurrencias;i++){
-	            numListasVisitadas=numListasVisitadas+1;
-	            if (skds.isInBlackListServer(i, IP)) {
-	                numOcurrencias= numOcurrencias+1;
-	            	listaOcurrencias.add(i);}}}
+		for(int i = inicio; i < fin; i++) {
+			numListasVisitadas = numListasVisitadas + 1;
+			if(skds.isInBlackListServer(i, IP)) {
+				listaOcurrencias.add(i);
+				numOcurrencias = numOcurrencias + 1;}}}
 	
 	public LinkedList<Integer> getListaOcurrencias() { //Devuelve la lista donde encontró las ocurrencias con la IP
 		return listaOcurrencias;}
