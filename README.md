@@ -69,27 +69,27 @@ A partir de lo anterior, implemente la siguiente secuencia de experimentos para 
 
 1. Un solo hilo.
 
-![](img/Captura1Hilo.jpg)
+![](img/Captura1Hilo.png)
 
 
 2. Tantos hilos como núcleos de procesamiento (haga que el programa determine esto haciendo uso del [API Runtime](https://docs.oracle.com/javase/7/docs/api/java/lang/Runtime.html)).
 
-![](img/Captura8Hilos.jpg)
+![](img/Captura8Hilos.png)
 
 
 3. Tantos hilos como el doble de núcleos de procesamiento.
 
-![](img/Captura16Hilos.jpg)
+![](img/Captura16Hilos.png)
 
 
 4. 50 hilos.
 
-![](img/Captura50Hilos.jpg)
+![](img/Captura50Hilos.png)
 
 
 5. 100 hilos.
 
-![](img/Captura100Hilos.jpg)
+![](img/Captura100Hilos.png)
 
 
 
@@ -98,7 +98,7 @@ Al iniciar el programa ejecute el monitor jVisualVM, y a medida que corran las p
 Con lo anterior, y con los tiempos de ejecución dados, haga una gráfica de tiempo de solución vs. número de hilos. Analice y plantee hipótesis con su compañero para las siguientes preguntas (puede tener en cuenta lo reportado por jVisualVM):
 
 
-![](img/GraficaHilovsTiempo.jpg)
+![](img/GraficaHilovsTiempo.png)
 
 
 
