@@ -14,10 +14,15 @@ import java.util.List;
 public class Main {
     
     public static void main(String a[]) throws InterruptedException{
+    	//Para controlar el tiempo de ejecucion hacemos uso del runtime long
     	long iniciarEjecucion = System.currentTimeMillis();
         HostBlackListsValidator hblv=new HostBlackListsValidator();
-        List<Integer> blackListOcurrences=hblv.checkHost("202.24.34.55",50); //añadimos el valor para N (cantidad de Threads)
+        int cantidadProcesadores = Runtime.getRuntime().availableProcessors(); //Consultamos la cantidad de procesadores disponibles
+        //List<Integer> blackListOcurrences=hblv.checkHost("202.24.34.55",cantidadProcesadores); //añadimos el valor cantidad de Procesadores para evaluar
+        List<Integer> blackListOcurrences=hblv.checkHost("202.24.34.55",100); //añadimos el valor para N (cantidad de Threads)
         System.out.println("The host was found in the following blacklists:"+blackListOcurrences);
         long finalizarEjecucion = System.currentTimeMillis();
-        System.out.println(finalizarEjecucion-iniciarEjecucion);}}
-//Para controlar el tiempo de ejecucion hacemos uso de long
+        long tiempoEjecucion = (finalizarEjecucion-iniciarEjecucion)/1000; 
+        System.out.println("Tiempo ejecución: "+tiempoEjecucion+" segundos");
+        //System.out.println("Numero de procesadores: "+cantidadProcesadores); //Mostramos la cantidad de procesadores
+        }}  
